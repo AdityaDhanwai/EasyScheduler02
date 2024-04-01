@@ -1,0 +1,7 @@
+pip3 install Flask==3.0.2
+pip install google-auth
+pip install google-api-python-client
+pip install google-auth-oauthlib
+pip install mysql-connector-python==8.0.32
+pip install authlib
+pip install gunicorn

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/WT Website logo.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+  <style>
+    .signup-btn {
+justify-content: center;
+flex-direction: row;
+display: flex;
+height: 50px;
+background-color: rgba(0, 255, 255, 0.164);
+justify-content: center;
+align-items: center;
+width: 250px;
+padding: 10px;
+box-shadow: 3px 3px 3px rgb(170, 170, 170);
+border-radius: 15px;
+margin-top: 25px;
+margin-left: 25px;
+margin-bottom: 25px;
+border: 3px solid black;
+}
+.btn-text {
+justify-content: center;
+padding: 10px;
+font-family: 'Poppins', sans-serif;
+color: rgb(243, 233, 233);
+}
+</style>
+<body>
+  <div class="bg-img">
+    <div class="content">
+      <header>Registration Form</header>
+      <form action="/signup" method="POST">
+        <div class="field">
+          <span class="fa fa-user"></span>
+          <input type="text" name="username" required placeholder="Username">
+        </div>
+        <div class="field space">
+          <span class="fa fa-lock"></span>
+          <input type="password" name="password" required placeholder="Password">
+          <span class="show">SHOW</span>
+        </div>
+        <div class="field space">
+          <span class="fa fa-envelope"></span>
+          <input type="email" name="email" required placeholder="Email">
+        </div>
+        <div class="field space">
+          <span class="fa fa-phone"></span>
+          <input type="tel" name="number" required placeholder="Phone Number">
+        </div>
+        <br>
+        <div class="field">
+          <input type="submit" value="Create">
+        </div>
+      </form>
+      <span>
+        <a href="google/" class="signup-btn" style="text-decoration:none;">
+          <img id="google" src="static/icons8-google-logo-48.png" alt="Google" style="width:30px;height:30px;">
+          <span class="btn-text">
+            Signup with Google
+          </span>
+        </a>
+      </span>
+      <div class="signup">Already have an account?
+        <a href="/login">Login</a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const pass_field = document.querySelector('.pass-key');
+    const showBtn = document.querySelector('.show');
+    showBtn.addEventListener('click', function(){
+      if(pass_field.type === "password"){
+        pass_field.type = "text";
+        showBtn.textContent = "HIDE";
+        showBtn.style.color = "#3498db";
+      }else{
+        pass_field.type = "password";
+        showBtn.textContent = "SHOW";
+        showBtn.style.color = "#222";
+      }
+    });
+  </script>
+  </body>
+</html>
